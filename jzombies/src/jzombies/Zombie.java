@@ -24,6 +24,7 @@ public class Zombie {
 
 	private ContinuousSpace<Object> space;
 	private Grid<Object> grid;
+	private boolean moved;
 
 	public Zombie(ContinuousSpace<Object> space, Grid<Object> grid) {
 		this.space = space;
@@ -64,6 +65,8 @@ public class Zombie {
 			space.moveByVector(this, 1, angle, 0);
 			myPoint = space.getLocation(this);
 			grid.moveTo(this, (int) myPoint.getX(), (int) myPoint.getY());
+			
+			moved = true;
 		}
 	}
 }
